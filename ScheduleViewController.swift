@@ -61,7 +61,8 @@ class ScheduleViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         if pickerView == dayPickerView {
             return dayList.count
         } else if pickerView == startTimePickerView {
-            return startTimeList.count
+            // as the shut down time is 10pm so that the latest time that the user can choose to start is 9pm for 1 session
+            return startTimeList.count - 2
         } else {
             return sessionList.count
         }
@@ -115,16 +116,26 @@ class ScheduleViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         // get initial start time
         let hour = calendar.component(.hour, from: Date())
         let minute = calendar.component(.minute, from: Date())
+
         // get the index of current hour
-        startTimeIndex = startTimeIntList.firstIndex(of: hour * 100)!
-        if minute - 30 < 0 {
-            // the current time is before half an hour e.g 16:15
-            // then the initial start time is 16:30
-            startTimeIndex += 1
+        if hour < 6 {
+            // if the current hour is before 6am
+            startTimeIndex = 0
+        } else if hour > 22 {
+            // if the current hour is after 10pm
+            startTimeIndex = startTimeIntList.count - 3
         } else {
-            // otherwise the start time is 17:00
-            startTimeIndex += 2
+            startTimeIndex = startTimeIntList.firstIndex(of: hour * 100)!
+            if minute - 30 < 0 {
+                // the current time is before half an hour e.g 16:15
+                // then the initial start time is 16:30
+                startTimeIndex += 1
+            } else {
+                // otherwise the start time is 17:00
+                startTimeIndex += 2
+            }
         }
+
         selectedStartTime = startTimeList[startTimeIndex]
         selectedStartTimeInt = startTimeIntList[startTimeIndex]
         startTimePickerView.selectRow(startTimeIndex, inComponent: 0, animated: false)
@@ -163,10 +174,14 @@ class ScheduleViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         }
         let maxRangeSession = (2200 - startTimeInt) / 100
         var tempSessionList = Array<Int>()
-        for i in 1...maxRangeSession {
-            tempSessionList.append(i)
+        if maxRangeSession >= 1 {
+            for i in 1...maxRangeSession {
+                tempSessionList.append(i)
+            }
+            sessionList = tempSessionList
+        } else {
+            sessionList = [1]
         }
-        sessionList = tempSessionList
     }
 
     @IBAction func submitButton(_ sender: Any) {
@@ -190,8 +205,14 @@ class ScheduleViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             chargesViewController.selectedSession = selectedSession
             chargesViewController.selectedStartTime = selectedStartTime
             chargesViewController.selectedStartTimeInt = selectedStartTimeInt
-            chargesViewController.selectedEndTime = startTimeList[startTimeIndex + selectedSession * 2]
-            chargesViewController.selectedEndTimeInt = startTimeIntList[startTimeIndex + selectedSession * 2]
+
+            if startTimeIndex + selectedSession * 2 > startTimeList.count - 1 {
+                chargesViewController.selectedEndTime = startTimeList[startTimeList.count - 1]
+                chargesViewController.selectedEndTimeInt = startTimeIntList[startTimeList.count - 1]
+            } else {
+                chargesViewController.selectedEndTime = startTimeList[startTimeIndex + selectedSession * 2]
+                chargesViewController.selectedEndTimeInt = startTimeIntList[startTimeIndex + selectedSession * 2]
+            }
         }
     }
 

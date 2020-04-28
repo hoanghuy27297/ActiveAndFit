@@ -50,6 +50,7 @@ class ChargesViewController: UIViewController {
             if selectedDayIndex >= 1 && selectedDayIndex <= 5 {
                 total = calcFee(offPeakFee: 20, peakFee: 25, peakHour: 1800)
             } else {
+                print("aaa")
                 total = calcFee(offPeakFee: 20, peakFee: 25, peakHour: 1200)
             }
         } else if selectedFacility == "Tennis court" || selectedFacility ==  "Squash court" || selectedFacility ==  "Yoga room" {
@@ -80,10 +81,10 @@ class ChargesViewController: UIViewController {
 
     func calcFee(offPeakFee: Int, peakFee: Int, peakHour: Int) -> Double {
         // compare the start time and end time with range of peak hours
-        if selectedEndTimeInt < peakHour {
+        if (selectedEndTimeInt < peakHour && peakHour == 1800) || (selectedEndTimeInt > peakHour && peakHour == 1200) {
             // selection is in off-peak hours -> end time must be before 18:00
             return Double(offPeakFee * selectedSession)
-        } else if selectedStartTimeInt > peakHour {
+        } else if (selectedEndTimeInt > peakHour && peakHour == 1800) || (selectedEndTimeInt < peakHour && peakHour == 1200) {
             // selection is in peak hours -> start time must be after 18:00
             return Double(peakFee * selectedSession)
         } else {
@@ -116,6 +117,18 @@ class ChargesViewController: UIViewController {
     }
 
     @IBAction func goBackHome(_ sender: Any) {
+        let alertController = UIAlertController(title: "Finish Confirmation", message: "After finish, you cannot change your selection. Do you still want to finish you selection?", preferredStyle: .alert)
+        let acceptAction = UIAlertAction(title: "OK", style: .default, handler: {(action) -> Void in self.back()})
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {(action) -> Void in print("Cancel")})
+
+        alertController.addAction(acceptAction)
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    func back() {
         performSegue(withIdentifier: "unwindSegueToHome", sender: self)
     }
     /*
