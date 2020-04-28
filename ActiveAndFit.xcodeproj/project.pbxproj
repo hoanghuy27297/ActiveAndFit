@@ -15,6 +15,9 @@
 		F5E8A1EB2456B59900BD0BDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E8A1E92456B59900BD0BDB /* LaunchScreen.storyboard */; };
 		F5E8A1F62456B59A00BD0BDB /* ActiveAndFitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E8A1F52456B59A00BD0BDB /* ActiveAndFitTests.swift */; };
 		F5E8A2012456B59A00BD0BDB /* ActiveAndFitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E8A2002456B59A00BD0BDB /* ActiveAndFitUITests.swift */; };
+		F5E8A20F2456CC3700BD0BDB /* FacilitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E8A20E2456CC3700BD0BDB /* FacilitiesTableViewController.swift */; };
+		F5E8A2112456CC4E00BD0BDB /* FacilitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E8A2102456CC4E00BD0BDB /* FacilitiesTableViewCell.swift */; };
+		F5E8A2152456FAD700BD0BDB /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E8A2142456FAD700BD0BDB /* ScheduleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		F5E8A1FC2456B59A00BD0BDB /* ActiveAndFitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActiveAndFitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E8A2002456B59A00BD0BDB /* ActiveAndFitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveAndFitUITests.swift; sourceTree = "<group>"; };
 		F5E8A2022456B59A00BD0BDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5E8A20E2456CC3700BD0BDB /* FacilitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacilitiesTableViewController.swift; sourceTree = "<group>"; };
+		F5E8A2102456CC4E00BD0BDB /* FacilitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacilitiesTableViewCell.swift; sourceTree = "<group>"; };
+		F5E8A2142456FAD700BD0BDB /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScheduleViewController.swift; path = ../ScheduleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,9 @@
 				F5E8A1E02456B59700BD0BDB /* SceneDelegate.swift */,
 				F5E8A1E22456B59700BD0BDB /* ViewController.swift */,
 				F5E8A1E42456B59700BD0BDB /* Main.storyboard */,
+				F5E8A20E2456CC3700BD0BDB /* FacilitiesTableViewController.swift */,
+				F5E8A2102456CC4E00BD0BDB /* FacilitiesTableViewCell.swift */,
+				F5E8A2142456FAD700BD0BDB /* ScheduleViewController.swift */,
 				F5E8A1E72456B59900BD0BDB /* Assets.xcassets */,
 				F5E8A1E92456B59900BD0BDB /* LaunchScreen.storyboard */,
 				F5E8A1EC2456B59900BD0BDB /* Info.plist */,
@@ -260,7 +269,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5E8A1E32456B59700BD0BDB /* ViewController.swift in Sources */,
+				F5E8A2112456CC4E00BD0BDB /* FacilitiesTableViewCell.swift in Sources */,
 				F5E8A1DF2456B59700BD0BDB /* AppDelegate.swift in Sources */,
+				F5E8A2152456FAD700BD0BDB /* ScheduleViewController.swift in Sources */,
+				F5E8A20F2456CC3700BD0BDB /* FacilitiesTableViewController.swift in Sources */,
 				F5E8A1E12456B59700BD0BDB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
