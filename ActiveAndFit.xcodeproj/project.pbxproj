@@ -18,6 +18,7 @@
 		F5E8A20F2456CC3700BD0BDB /* FacilitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E8A20E2456CC3700BD0BDB /* FacilitiesTableViewController.swift */; };
 		F5E8A2112456CC4E00BD0BDB /* FacilitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E8A2102456CC4E00BD0BDB /* FacilitiesTableViewCell.swift */; };
 		F5E8A2152456FAD700BD0BDB /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E8A2142456FAD700BD0BDB /* ScheduleViewController.swift */; };
+		F5FDDA782457E4AE00D086F6 /* ChargesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FDDA772457E4AE00D086F6 /* ChargesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		F5E8A20E2456CC3700BD0BDB /* FacilitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacilitiesTableViewController.swift; sourceTree = "<group>"; };
 		F5E8A2102456CC4E00BD0BDB /* FacilitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacilitiesTableViewCell.swift; sourceTree = "<group>"; };
 		F5E8A2142456FAD700BD0BDB /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScheduleViewController.swift; path = ../ScheduleViewController.swift; sourceTree = "<group>"; };
+		F5FDDA772457E4AE00D086F6 /* ChargesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				F5E8A20E2456CC3700BD0BDB /* FacilitiesTableViewController.swift */,
 				F5E8A2102456CC4E00BD0BDB /* FacilitiesTableViewCell.swift */,
 				F5E8A2142456FAD700BD0BDB /* ScheduleViewController.swift */,
+				F5FDDA772457E4AE00D086F6 /* ChargesViewController.swift */,
 				F5E8A1E72456B59900BD0BDB /* Assets.xcassets */,
 				F5E8A1E92456B59900BD0BDB /* LaunchScreen.storyboard */,
 				F5E8A1EC2456B59900BD0BDB /* Info.plist */,
@@ -270,6 +273,7 @@
 			files = (
 				F5E8A1E32456B59700BD0BDB /* ViewController.swift in Sources */,
 				F5E8A2112456CC4E00BD0BDB /* FacilitiesTableViewCell.swift in Sources */,
+				F5FDDA782457E4AE00D086F6 /* ChargesViewController.swift in Sources */,
 				F5E8A1DF2456B59700BD0BDB /* AppDelegate.swift in Sources */,
 				F5E8A2152456FAD700BD0BDB /* ScheduleViewController.swift in Sources */,
 				F5E8A20F2456CC3700BD0BDB /* FacilitiesTableViewController.swift in Sources */,
