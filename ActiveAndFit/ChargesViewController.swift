@@ -115,6 +115,9 @@ class ChargesViewController: UIViewController {
         }
     }
 
+    @IBAction func goBackHome(_ sender: Any) {
+        performSegue(withIdentifier: "unwindSegueToHome", sender: self)
+    }
     /*
     // MARK: - Navigation
 

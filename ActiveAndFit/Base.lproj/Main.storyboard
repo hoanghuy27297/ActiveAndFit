@@ -351,6 +351,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6c-vH-T9e">
+                                <rect key="frame" x="157" y="471.5" width="100" height="36"/>
+                                <color key="backgroundColor" red="0.052782913809999998" green="0.652919798" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="xk5-sH-mhA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Finish">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBackHome:" destination="rC6-07-WmH" eventType="touchUpInside" id="fva-oc-xVF"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yll-6k-Ds7">
                                 <rect key="frame" x="120" y="412" width="260" height="19.5"/>
                                 <constraints>
@@ -370,6 +384,7 @@
                             <constraint firstItem="Yll-6k-Ds7" firstAttribute="leading" secondItem="OSK-Gw-aow" secondAttribute="leading" constant="120" id="Gzz-0K-Bx3"/>
                             <constraint firstItem="3aX-41-lEx" firstAttribute="top" secondItem="BnT-0v-2ko" secondAttribute="bottom" constant="20" id="IxF-Cn-FDg"/>
                             <constraint firstItem="PWP-eG-9X7" firstAttribute="top" secondItem="rcO-86-nps" secondAttribute="bottom" constant="40" id="Kah-oH-DLB"/>
+                            <constraint firstItem="b6c-vH-T9e" firstAttribute="top" secondItem="Yll-6k-Ds7" secondAttribute="bottom" constant="40" id="Kpi-mh-uKS"/>
                             <constraint firstItem="z0V-XM-YK9" firstAttribute="leading" secondItem="b0L-mL-XQj" secondAttribute="trailing" constant="133" id="MUq-Va-Zms"/>
                             <constraint firstItem="432-TV-K9p" firstAttribute="top" secondItem="b0L-mL-XQj" secondAttribute="bottom" constant="20" id="PeF-ii-ozX"/>
                             <constraint firstItem="rcO-86-nps" firstAttribute="top" secondItem="OSK-Gw-aow" secondAttribute="top" constant="40" id="U8g-BV-yFl"/>
@@ -385,6 +400,7 @@
                             <constraint firstItem="432-TV-K9p" firstAttribute="leading" secondItem="OSK-Gw-aow" secondAttribute="leading" constant="20" id="sAC-Ph-NEI"/>
                             <constraint firstItem="BnT-0v-2ko" firstAttribute="leading" secondItem="2RP-mK-BD6" secondAttribute="trailing" constant="31" id="sbI-XT-zDa"/>
                             <constraint firstItem="2RP-mK-BD6" firstAttribute="leading" secondItem="OSK-Gw-aow" secondAttribute="leading" constant="20" id="uNM-6I-DQV"/>
+                            <constraint firstItem="b6c-vH-T9e" firstAttribute="centerX" secondItem="xhQ-I7-Ocn" secondAttribute="centerX" id="ufw-bB-K3U"/>
                             <constraint firstItem="rcO-86-nps" firstAttribute="leading" secondItem="OSK-Gw-aow" secondAttribute="leading" constant="20" id="vlM-8b-YOA"/>
                             <constraint firstItem="b0L-mL-XQj" firstAttribute="top" secondItem="PWP-eG-9X7" secondAttribute="bottom" constant="20" id="vqw-4R-5xU"/>
                         </constraints>
@@ -398,9 +414,11 @@
                         <outlet property="facilityLabel" destination="AFf-4X-0cD" id="J5s-mf-AGm"/>
                         <outlet property="sessionLabel" destination="pAp-9k-EBd" id="mLs-gm-HXO"/>
                         <outlet property="totalLabel" destination="3aX-41-lEx" id="6SQ-4f-VAJ"/>
+                        <segue destination="77I-ZJ-nIF" kind="unwind" identifier="unwindSegueToHome" unwindAction="unwindToHomeWithSegue:" id="6Ai-mw-h2G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFM-0w-0eU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="77I-ZJ-nIF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3978" y="139"/>
         </scene>
